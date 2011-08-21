@@ -1,0 +1,46 @@
+this folder contains code and doodles written while reading:
+	Designing Embedded Systems with PIC(R) Microcontrollers 2nd Ed (deswpm-2)
+	Principles and Applications
+	by Tim Wilmshurst
+
+all development/programming on openSuSE 11.4
+
+use mplabx to code and compile (beta 7.01)
+
+use "pk2cmd" to program:
+	$ pk2cmd -PPIC16F84A -R -T -F led1a.X.production.hex -M -Y
+
+	-P<part>	select chip
+	-R		release /MCLR when done
+	-T		power device when done
+	-F<hex>		hex file to program
+	-M		region to program, in this case entire device
+	-Y		verify region, in this case entire device
+
+	other good options:
+	-Z		preserve EEPROM
+
+	NOTE: this can be done as a regular user
+	NOTE: the '-M' option also causes an erase to happen before pgm
+	NOTE: the order of the cmdline args is irrelevant, pk2cmd sorts
+	      and runs them in the most sensible order
+
+other uses of pk2cmd
+	to simply power and run the device:
+		$ pk2cmd -P -T -R
+
+		NOTE: the -P option by itself causes a self-detect algorithm
+		      to run, this algo takes a couple seconds, to speed it
+		      up specify the device yourself (i.e. -PPIC16F84A)
+
+	to dump a range of program memory:
+		$ pk2cmd -PPIC16F84A -GP0-30
+
+	to display the configuration bits:
+		$ pk2cmd -PPIC16F84A -GC
+	
+	to dump the entire chip contents to a file (out.hex):
+		$ pk2cmd -PPIC16F84A -GFout.hex
+	
+	to turn off the device (stop power from pickit2):
+		$ pk2cmd -PPIC16F84A
