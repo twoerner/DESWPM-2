@@ -1,0 +1,6 @@
+Makefile
+.dep.inc
+__revgrep__
+build
+dist
+nbproject
