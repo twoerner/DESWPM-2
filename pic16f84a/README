@@ -1,0 +1,56 @@
+blaster-score:
+August 28, 2011
+	This project uses the "ping-pong" hardware board. It plays a game of
+	throwing and catching the LED.
+
+	The game starts off by illuminating the left-most LED. The game is
+	waiting for a left button press to start the ball throw. If the
+	right button is pressed instead the red LED flashes to indicate an
+	invalid move.
+
+	When the left button is pressed the illuminated LED shifts to the
+	right one LED at a time (the ball is being thrown). Before the ball
+	reaches the right-most LED the right button must be pressed to
+	catch the ball. If the right button is pressed too early, left gets
+	a point (i.e. the left score LED is lit) and the red LED blinks. If
+	the right button is pressed too late the left score LED is illuminated
+	to indicate left getting a point. Pressing the left button again
+	during the throw is ignored.
+
+	After the ball has been thrown from left to right, the right-most
+	LED is blinked to indicate the game is now changing sides. The
+	right-most LED is now illuminated and the game is waiting for the
+	right button to be pressed to throw the ball to the left. Everything
+	that happened going from left to right will now be valid again
+	but with the left and right roles reversed.
+
+	I keep calling this project "blaster" because at first I was thinking
+	of it more like a laser being blasted from one side to the other, but
+	I think the ball throwing and catching analogy is probably better.
+
+blaster2:
+August 22, 2011
+	Using the buttons, bounce the ball left to right, then right to left,
+	etc. The board starts with the left LED illuminated. Press the left
+	button and the illuminated LED moves to the right one LED at a time
+	(press the right button and the error LED blinks).
+
+	Once the ball reaches the right side the logic reverses: now you press
+	the right button to throw the ball to the other side and pressing the
+	left button at this time blinks the red error LED.
+
+blaster:
+August  21, 2011
+	Shoot a blast of length 3 LEDs from left to right by pressing the
+	left button.
+
+led1a:
+August 2011
+	Blink a pattern of 0x55/0xaa on the green LEDs. Mostly to test the
+	delay routine and as a solder test to verify the LEDs are in the
+	correct order. Also illuminate the red error LED.
+
+led:
+August 2011
+	Turn on all the green LEDs. Mostly just a test to verify the solder
+	work.
