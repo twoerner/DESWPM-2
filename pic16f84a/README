@@ -33,6 +33,12 @@ August 28, 2011
 	      can press the catching button while the last 2 LEDs are
 	      illuminated to successfully catch the ball.
 
+	NOTE: this program doesn't use interrupts but simply does a small
+	      piece of work and then immediately returns to the main loop.
+	      The ping-pong hardware isn't wired to accept external
+	      interrupts, therefore none of the other programs using this
+	      hardware use interrupts either.
+
 blaster2:
 August 22, 2011
 	Using the buttons, bounce the ball left to right, then right to left,
