@@ -53,13 +53,14 @@ init
 	movlw	DIR_LEFT
 	movwf	DIRECTION
 
+	; clear "save"
+	clrw
+	movwf	BALLSAVE
+
 main
 	; reset score
 	bcf	PORTA, LSCORE
 	bcf	PORTA, RSCORE
-	; reset "save"
-	clrw
-	movwf	BALLSAVE
 	; check state
 	movfw	STATE
 	sublw	STATE_BEGIN
@@ -168,6 +169,9 @@ update_right_done
 	return
 
 chg_dir_and_start_over
+	; reset "save"
+	clrw
+	movwf	BALLSAVE
 	movlw	STATE_BEGIN
 	movwf	STATE
 	movfw	DIRECTION
