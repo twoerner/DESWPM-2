@@ -28,6 +28,11 @@ August 28, 2011
 	of it more like a laser being blasted from one side to the other, but
 	I think the ball throwing and catching analogy is probably better.
 
+	NOTE: it's a bit too hard to try to catch the ball right as the last
+	      LED is illuminated so the code gives you a little leeway. You
+	      can press the catching button while the last 2 LEDs are
+	      illuminated to successfully catch the ball.
+
 blaster2:
 August 22, 2011
 	Using the buttons, bounce the ball left to right, then right to left,
